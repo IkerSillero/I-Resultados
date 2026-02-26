@@ -1,0 +1,26 @@
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.league-logo {
+  width: 50px;
+  margin-right: 15px;
+}
+
+.league-info p {
+  margin: 5px 0 0 0;
+  color: gray;
+}

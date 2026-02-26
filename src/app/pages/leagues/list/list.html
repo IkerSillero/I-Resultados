@@ -1,0 +1,32 @@
+<h1>Competiciones</h1>
+
+<div *ngIf="loading">
+  <p>Cargando ligas...</p>
+</div>
+
+<div *ngIf="error">
+  <p style="color: red;">{{ error }}</p>
+</div>
+
+<div *ngIf="!loading && !error">
+
+  <div 
+    class="card"
+    *ngFor="let league of leagues"
+    [routerLink]="['/leagues', league.id]"
+  >
+    <img 
+      *ngIf="league.logo"
+      [src]="league.logo"
+      alt="{{ league.name }}"
+      class="league-logo"
+    />
+
+    <div class="league-info">
+      <strong>{{ league.name }}</strong>
+      <p>{{ league.country }}</p>
+    </div>
+
+  </div>
+
+</div>

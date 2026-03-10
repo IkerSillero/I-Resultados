@@ -1,43 +1,21 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { League } from '../models/league';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  private apiUrl = 'https://api.besoccer.com'; // ⚠️ Cambiar cuando tengas la API real
-  private apiKey = 'TU_API_KEY_AQUI'; // ⚠️ Cambiar cuando tengas la API key
+  private apiUrl = 'https://www.thesportsdb.com/api/v1/json/3';
 
   constructor(private http: HttpClient) {}
 
-  private getHeaders(): HttpHeaders {
-    return new HttpHeaders({
-      'Authorization': `Bearer ${this.apiKey}`,
-      'Content-Type': 'application/json'
-    });
-  }
+  getTeams(leagueName:string){
 
-  getLeagues(): Observable<League[]> {
-    return this.http.get<League[]>(
-      `${this.apiUrl}/competitions`,
-      { headers: this.getHeaders() }
-    );
-  }
-
-  getTeams(leagueId: number) {
     return this.http.get(
-      `${this.apiUrl}/teams?league=${leagueId}`,
-      { headers: this.getHeaders() }
+      `${this.apiUrl}/search_all_teams.php?l=${leagueName}`
     );
+
   }
 
-  getPlayers(teamId: number) {
-    return this.http.get(
-      `${this.apiUrl}/players?team=${teamId}`,
-      { headers: this.getHeaders() }
-    );
-  }
 }

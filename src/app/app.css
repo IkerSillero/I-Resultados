@@ -1,56 +1,38 @@
-/* ===================== */
-/* NAVBAR */
-/* ===================== */
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #0f5132;
-  padding: 10px 30px;
-  color: white;
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 25px;
+  background:#448401;
+  color:white;
 }
 
-.logo-container {
-  display: flex;
-  align-items: center;
+.navbar-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  cursor:pointer;
 }
 
-.logo {
-  height: 45px;
-  margin-right: 12px;
+.logo{
+  width:40px;
 }
 
-.app-title {
-  font-size: 20px;
-  font-weight: bold;
+.title{
+  font-size:20px;
+  font-weight:bold;
 }
 
-/* ===================== */
-/* LINKS */
-/* ===================== */
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  margin-left: 25px;
-  font-weight: 500;
-  transition: 0.3s;
+.navbar-links a{
+  color:white;
+  text-decoration:none;
+  font-weight:500;
 }
 
-.nav-links a:hover {
-  color: #22c55e;
+.navbar-links a:hover{
+  opacity:0.8;
 }
 
-.active {
-  border-bottom: 2px solid #22c55e;
-  padding-bottom: 3px;
-}
-
-/* ===================== */
-/* CONTENIDO */
-/* ===================== */
-
-.content {
-  padding: 30px;
+.content{
+  padding:25px;
 }
